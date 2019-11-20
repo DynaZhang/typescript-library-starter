@@ -7,5 +7,6 @@ export default function xhr(config: AxiosRequestConfig) {
 
   request.open(method.toUpperCase(), url, true)
 
+  console.log(config)
   request.send(data)
 }
