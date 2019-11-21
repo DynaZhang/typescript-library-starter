@@ -1,4 +1,4 @@
-import { encode, isDate, isPlainObject } from './tools'
+import { encode, isDate, isPlainObject, normalizeHeaderName } from './tools'
 
 /**
  * the process of url according the request url and the params
@@ -59,6 +59,22 @@ export function transformRequest (data: any): any {
     return JSON.stringify(data)
   }
   return data
+}
+
+/**
+ * the process of request headers
+ * @param headers
+ * @param data
+ */
+export function processHeaders(headers:any, data: any): any {
+  normalizeHeaderName(headers, 'Content-Type')
+  if (isPlainObject(data)) {
+    if (headers && !headers['Content-Type']) {
+      headers['Content-Type'] = 'application/json;charset=utf-8'
+    }
+  }
+
+  return headers
 }
 
 

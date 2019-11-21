@@ -37,3 +37,20 @@ export function encode(val: string): string {
     .replace(/%5B/ig, '[')
     .replace(/%5D/ig, ']')
 }
+
+/**
+ * normalize the name of request header
+ * @param headers
+ * @param normalizeName
+ */
+export function normalizeHeaderName(headers: any, normalizeName: string): void {
+  if (!headers) {
+    return
+  }
+  Object.keys(headers).forEach((name) => {
+    if (name !== normalizeName && name.toUpperCase() === normalizeName.toUpperCase()) {
+      headers[normalizeName] = headers[name]
+      delete headers[name]
+    }
+  })
+}

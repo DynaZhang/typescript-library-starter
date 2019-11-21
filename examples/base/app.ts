@@ -74,3 +74,26 @@ axios({
   data: [1,2]
 })
 
+axios({
+  method: 'POST',
+  url: '/base/get',
+  data: {
+    a: 1,
+    b: 2
+  }
+})
+
+axios({
+  method: 'POST',
+  url: '/base/get',
+  headers: {
+    'content-type': 'application/json;charset=utf-8',
+    'Accept': 'application/json, text/plain, */*'
+  },
+  data: {
+    a: 1,
+    b: 2,
+    c: '张朱磊'
+  }
+})
+
