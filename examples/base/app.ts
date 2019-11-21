@@ -7,6 +7,8 @@ axios({
     a: 1,
     b: 2
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -20,6 +22,8 @@ axios({
     },
     b: '江户川'
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -28,6 +32,8 @@ axios({
   params: {
     foo: [1,2]
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -36,6 +42,8 @@ axios({
   params: {
     date: new Date()
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -44,6 +52,8 @@ axios({
   params: {
     specialChar: '@~!'
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -53,6 +63,8 @@ axios({
     a: 1,
     b: 2
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -66,12 +78,16 @@ axios({
     },
     b: [1,2]
   }
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
   method: 'POST',
   url: '/base/get',
   data: [1,2]
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -80,7 +96,10 @@ axios({
   data: {
     a: 1,
     b: 2
-  }
+  },
+  responseType: 'blob'
+}).then(resp => {
+  console.log(resp)
 })
 
 axios({
@@ -94,6 +113,9 @@ axios({
     a: 1,
     b: 2,
     c: '张朱磊'
-  }
+  },
+  responseType: 'text'
+}).then(resp => {
+  console.log(resp)
 })
 
