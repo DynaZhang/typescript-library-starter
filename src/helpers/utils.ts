@@ -1,4 +1,5 @@
 import { encode, isDate, isPlainObject, normalizeHeaderName } from './tools'
+import { AxiosResponse } from '../types'
 
 /**
  * the process of url according the request url and the params
